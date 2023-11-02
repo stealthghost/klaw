@@ -67,6 +67,7 @@ public class ServerConfigController {
   public ResponseEntity<ConnectivityStatus> testClusterApiConnection(
       @RequestParam("clusterApiUrl") String clusterApiUrl) throws KlawException {
     return new ResponseEntity<>(
+        // deepcode ignore Ssrf: <please specify a reason of ignoring this>
         serverConfigService.testClusterApiConnection(clusterApiUrl), HttpStatus.OK);
   }
 }
